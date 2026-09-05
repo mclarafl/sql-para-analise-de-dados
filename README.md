@@ -39,7 +39,7 @@ O objetivo é registrar minha evolução nos estudos e praticar a aplicação de
 - `IS NULL`;
 - Exercícios práticos.
 
-### Módulo 3 — Funções de agregação
+### Módulo 3 — Funções Agregadas
 
 - `COUNT`;
 - `SUM`;
@@ -47,10 +47,7 @@ O objetivo é registrar minha evolução nos estudos e praticar a aplicação de
 - `MAX`;
 - `AVG`;
 - Contagem de valores distintos;
-- Funções agregadas com filtros;
-- Subconsultas com funções agregadas;
 - Agrupamento de registros com `GROUP BY`;
-- Agrupamento por mais de uma coluna;
 - Filtragem de grupos com `HAVING`;
 - Exercícios práticos.
 
@@ -65,15 +62,47 @@ O objetivo é registrar minha evolução nos estudos e praticar a aplicação de
 - Tratamento de valores nulos com `COALESCE`;
 - Junção de mais de duas tabelas;
 - Junção utilizando mais de uma condição;
-- Associação de dados por identificadores;
 - Exercícios práticos.
+
+### Módulo 5 — Unions
+
+- União dos resultados de diferentes consultas;
+- `UNION`;
+- `UNION ALL`;
+- Remoção ou manutenção de registros duplicados;
+- Compatibilidade entre as colunas das consultas.
+
+### Módulo 6 — Subqueries
+
+- Subquery no `WHERE`;
+- Subquery no `FROM`;
+- Subquery no `SELECT`;
+- Expressões de tabela comuns com `WITH`;
+- Criação e utilização de CTEs;
+- Consultas de visitas acumuladas;
+- Análise de recorrência de clientes;
+- Comparação de preços com a média;
+- Exercício prático.
+
+### Módulo 7 — Tratamento de Dados
+
+- Conversão de tipos com o operador `::`;
+- Conversão de tipos com `CAST`;
+- Classificação de dados com `CASE WHEN`;
+- Tratamento de valores nulos com `COALESCE`;
+- Tratamento de textos com `LOWER`, `UPPER`, `TRIM` e `REPLACE`;
+- Manipulação de datas com `INTERVAL`;
+- Truncagem de datas com `DATE_TRUNC`;
+- Extração de partes de datas com `EXTRACT`;
+- Cálculo de diferenças entre datas;
+- Criação e exclusão de funções personalizadas.
 
 ## Organização do repositório
 
-Cada módulo possui uma pasta própria, contendo:
+Cada módulo possui uma pasta própria. Dependendo do conteúdo apresentado no curso, ela pode conter:
 
 - `anotacoes.sql`: conceitos e exemplos estudados durante as aulas;
-- `exercicios-resolvidos.sql`: exercícios propostos e minhas soluções.
+- `exercicio-resolvido.sql`: atividade proposta e sua respectiva solução.
 
 ## Tecnologias utilizadas
 
@@ -84,7 +113,10 @@ Cada módulo possui uma pasta própria, contendo:
 
 - [x] Módulo 1 — Fundamentos de SQL
 - [x] Módulo 2 — Operadores
-- [x] Módulo 3 — Funções de agregação
+- [x] Módulo 3 — Funções Agregadas
 - [x] Módulo 4 — Joins
+- [x] Módulo 5 — Unions
+- [x] Módulo 6 — Subqueries
+- [x] Módulo 7 — Tratamento de Dados
 
 > Este repositório será atualizado conforme meu avanço no curso.
