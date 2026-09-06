@@ -97,12 +97,25 @@ O objetivo é registrar minha evolução nos estudos e praticar a aplicação de
 - Cálculo de diferenças entre datas;
 - Criação e exclusão de funções personalizadas.
 
+### Módulo 8 — Manipulação de Tabelas
+
+- Criação de tabelas a partir de consultas com `SELECT INTO`;
+- Criação de tabelas com `CREATE TABLE`;
+- Inserção de registros com `INSERT INTO` e `VALUES`;
+- Atualização de registros com `UPDATE`;
+- Exclusão de registros com `DELETE`;
+- Adição de colunas com `ALTER TABLE`;
+- Alteração do tipo de uma coluna;
+- Renomeação de colunas;
+- Exclusão de colunas com `DROP COLUMN`;
+- Exclusão de tabelas com `DROP TABLE`.
+
 ## Organização do repositório
 
 Cada módulo possui uma pasta própria. Dependendo do conteúdo apresentado no curso, ela pode conter:
 
 - `anotacoes.sql`: conceitos e exemplos estudados durante as aulas;
-- `exercicio-resolvido.sql`: atividade proposta e sua respectiva solução.
+- `exercicios-resolvidos.sql`: exercícios propostos e suas respectivas soluções.
 
 ## Tecnologias utilizadas
 
@@ -118,5 +131,8 @@ Cada módulo possui uma pasta própria. Dependendo do conteúdo apresentado no c
 - [x] Módulo 5 — Unions
 - [x] Módulo 6 — Subqueries
 - [x] Módulo 7 — Tratamento de Dados
+- [x] Módulo 8 — Manipulação de Tabelas
+- [ ] Projeto 1 — Dashboard de Acompanhamento de Vendas
+- [ ] Projeto 2 — Análise de Perfil dos Clientes
 
-> Este repositório será atualizado conforme meu avanço no curso.
+> Os módulos de conteúdo foram concluídos. O repositório será atualizado conforme o desenvolvimento dos projetos finais do curso.
