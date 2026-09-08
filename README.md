@@ -9,7 +9,7 @@ O objetivo é registrar minha evolução nos estudos e praticar a aplicação de
 - **Curso:** SQL para Análise de Dados: Do básico ao avançado
 - **Instrutora:** Midori Toyota
 - **Plataforma:** Udemy
-- **Link:** [Acessar o curso na Udemy](https://www.udemy.com/course/sql-para-analise-de-dados/)
+- **Link:** [Acessar o curso](https://www.udemy.com/course/sql-para-analise-de-dados/)
 
 ## Conteúdos
 
@@ -41,86 +41,136 @@ O objetivo é registrar minha evolução nos estudos e praticar a aplicação de
 
 ### Módulo 3 — Funções Agregadas
 
+- Funções de agregação;
 - `COUNT`;
 - `SUM`;
-- `MIN`;
-- `MAX`;
 - `AVG`;
-- Contagem de valores distintos;
-- Agrupamento de registros com `GROUP BY`;
-- Filtragem de grupos com `HAVING`;
+- `MIN` e `MAX`;
+- Agrupamento de resultados com `GROUP BY`;
+- Filtros de agrupamentos com `HAVING`;
 - Exercícios práticos.
 
 ### Módulo 4 — Joins
 
-- Combinação de dados entre tabelas;
-- Utilização de aliases;
+- Combinação de dados de diferentes tabelas;
 - `INNER JOIN`;
 - `LEFT JOIN`;
 - `RIGHT JOIN`;
 - `FULL JOIN`;
-- Tratamento de valores nulos com `COALESCE`;
-- Junção de mais de duas tabelas;
-- Junção utilizando mais de uma condição;
+- Junções utilizando mais de uma coluna;
 - Exercícios práticos.
 
 ### Módulo 5 — Unions
 
-- União dos resultados de diferentes consultas;
+- União dos resultados de consultas;
 - `UNION`;
 - `UNION ALL`;
-- Remoção ou manutenção de registros duplicados;
-- Compatibilidade entre as colunas das consultas.
+- Diferenças no tratamento de registros duplicados;
+- Compatibilidade entre as colunas das consultas;
+- Exemplos práticos.
 
 ### Módulo 6 — Subqueries
 
-- Subquery no `WHERE`;
-- Subquery no `FROM`;
-- Subquery no `SELECT`;
-- Expressões de tabela comuns com `WITH`;
-- Criação e utilização de CTEs;
-- Consultas de visitas acumuladas;
-- Análise de recorrência de clientes;
-- Comparação de preços com a média;
-- Exercício prático.
+- Consultas inseridas em outras consultas;
+- Subqueries no `WHERE`;
+- Organização de consultas com `WITH` e CTEs;
+- Subqueries no `FROM`;
+- Subqueries no `SELECT`;
+- Exemplos e exercícios práticos.
 
 ### Módulo 7 — Tratamento de Dados
 
-- Conversão de tipos com o operador `::`;
-- Conversão de tipos com `CAST`;
-- Classificação de dados com `CASE WHEN`;
-- Tratamento de valores nulos com `COALESCE`;
-- Tratamento de textos com `LOWER`, `UPPER`, `TRIM` e `REPLACE`;
-- Manipulação de datas com `INTERVAL`;
-- Truncagem de datas com `DATE_TRUNC`;
-- Extração de partes de datas com `EXTRACT`;
-- Cálculo de diferenças entre datas;
-- Criação e exclusão de funções personalizadas.
+- Conversão de tipos de dados;
+- Tratamento de textos;
+- Tratamento de datas;
+- Tratamento de valores nulos;
+- Criação de condições com `CASE WHEN`;
+- Exemplos práticos.
 
 ### Módulo 8 — Manipulação de Tabelas
 
-- Criação de tabelas a partir de consultas com `SELECT INTO`;
-- Criação de tabelas com `CREATE TABLE`;
-- Inserção de registros com `INSERT INTO` e `VALUES`;
-- Atualização de registros com `UPDATE`;
-- Exclusão de registros com `DELETE`;
-- Adição de colunas com `ALTER TABLE`;
-- Alteração do tipo de uma coluna;
-- Renomeação de colunas;
-- Exclusão de colunas com `DROP COLUMN`;
-- Exclusão de tabelas com `DROP TABLE`.
+- Criação e exclusão de tabelas;
+- Inserção de registros;
+- Atualização de registros;
+- Exclusão de registros;
+- Adição, alteração e remoção de colunas;
+- Exemplos práticos.
 
 ## Organização do repositório
 
-Cada módulo possui uma pasta própria. Dependendo do conteúdo apresentado no curso, ela pode conter:
+Os conteúdos estão separados em pastas por módulo:
+
+| Pasta | Conteúdo |
+|---|---|
+| `Módulo 1 - Fundamentos` | Estrutura e comandos básicos das consultas |
+| `Módulo 2 - Operadores` | Operadores aritméticos, de comparação e lógicos |
+| `Módulo 3 - Funções Agregadas` | Agregações, agrupamentos e filtros |
+| `Módulo 4 - Joins` | Combinação de dados de diferentes tabelas |
+| `Módulo 5 - Unions` | União dos resultados de consultas |
+| `Módulo 6 - Subqueries` | Subconsultas e CTEs |
+| `Módulo 7 - Tratamento de Dados` | Transformação e tratamento dos dados |
+| `Módulo 8 - Manipulação de Tabelas` | Manipulação de tabelas, colunas e registros |
+
+Dentro das pastas, os arquivos seguem o padrão:
 
 - `anotacoes.sql`: conceitos e exemplos estudados durante as aulas;
-- `exercicios-resolvidos.sql`: exercícios propostos e suas respectivas soluções.
+- `exercicios-resolvidos.sql`: exercícios propostos e minhas soluções, quando houver.
 
 ## Tecnologias utilizadas
 
-- SQL;
-- PostgreSQL.
+- **SQL:** linguagem utilizada nas consultas e na manipulação dos dados;
+- **PostgreSQL:** sistema de gerenciamento do banco de dados;
+- **pgAdmin:** ferramenta utilizada para acessar o banco e executar as consultas.
+
+## Banco de dados
+
+As atividades utilizam a base disponibilizada durante o curso.
+
+Nas consultas, são utilizados schemas como:
+
+- `sales`: tabelas relacionadas a clientes, produtos, lojas, visitas e vendas;
+- `temp_tables`: tabelas auxiliares utilizadas nos exemplos e exercícios.
+
+Os arquivos deste repositório registram as consultas e anotações dos estudos. A base de dados e sua instalação não estão incluídas.
+
+Para executar os exemplos, é necessário ter acesso à base utilizada no curso ou a uma estrutura compatível com as tabelas e colunas referenciadas.
+
+## Como utilizar
+
+1. Abra a pasta do módulo que deseja consultar;
+2. Acesse o arquivo de anotações ou exercícios;
+3. Leia os comentários que acompanham as consultas;
+4. Para praticar, abra o arquivo no pgAdmin conectado à base correspondente;
+5. Selecione e execute uma consulta por vez.
+
+Os arquivos foram organizados para estudo por trechos, sem ponto e vírgula entre as consultas.
+
+Nos exemplos de manipulação de tabelas, observe a ordem das operações, pois alguns comandos dependem de estruturas criadas anteriormente.
+
+## Projetos práticos
+
+Os projetos do curso possuem repositórios próprios, com as consultas, os resultados e a documentação de cada análise.
+
+### Projeto 1 — Dashboard de Acompanhamento de Vendas
+
+**Concluído.**
+
+Projeto desenvolvido com PostgreSQL e Microsoft Excel para acompanhar:
+
+- Receita e ticket médio;
+- Volume de visitas e vendas;
+- Conversão mensal;
+- Vendas por estado;
+- Marcas e lojas com mais vendas;
+- Visitas por dia da semana.
+
+[Acessar o repositório do projeto](https://github.com/mclarafl/dashboard-acompanhamento-vendas)
+
+### Projeto 2 — Análise de Perfil dos Clientes
+
+**Ainda não iniciado.**
+
+O link será adicionado após a publicação do projeto.
 
 ## Progresso
 
@@ -132,7 +182,13 @@ Cada módulo possui uma pasta própria. Dependendo do conteúdo apresentado no c
 - [x] Módulo 6 — Subqueries
 - [x] Módulo 7 — Tratamento de Dados
 - [x] Módulo 8 — Manipulação de Tabelas
-- [ ] Projeto 1 — Dashboard de Acompanhamento de Vendas
+- [x] Projeto 1 — Dashboard de Acompanhamento de Vendas
 - [ ] Projeto 2 — Análise de Perfil dos Clientes
 
-> Os módulos de conteúdo foram concluídos. O repositório será atualizado conforme o desenvolvimento dos projetos finais do curso.
+## Autora
+
+**Maria Clara Ferreira Lima**
+
+[GitHub](https://github.com/mclarafl) · [LinkedIn](https://www.linkedin.com/in/mariacfl/)
+
+> Repositório criado para registrar meus aprendizados e acompanhar minha evolução em SQL e análise de dados.
