@@ -98,8 +98,6 @@ O objetivo é registrar minha evolução nos estudos e praticar a aplicação de
 
 ## Organização do repositório
 
-Os conteúdos estão separados em pastas por módulo:
-
 | Pasta | Conteúdo |
 |---|---|
 | `Módulo 1 - Fundamentos` | Estrutura e comandos básicos das consultas |
@@ -110,8 +108,9 @@ Os conteúdos estão separados em pastas por módulo:
 | `Módulo 6 - Subqueries` | Subconsultas e CTEs |
 | `Módulo 7 - Tratamento de Dados` | Transformação e tratamento dos dados |
 | `Módulo 8 - Manipulação de Tabelas` | Manipulação de tabelas, colunas e registros |
+| `imagens` | Diagrama da estrutura do banco de dados |
 
-Dentro das pastas, os arquivos seguem o padrão:
+Dentro das pastas dos módulos, os arquivos seguem o padrão:
 
 - `anotacoes.sql`: conceitos e exemplos estudados durante as aulas;
 - `exercicios-resolvidos.sql`: exercícios propostos e minhas soluções, quando houver.
@@ -124,28 +123,75 @@ Dentro das pastas, os arquivos seguem o padrão:
 
 ## Banco de dados
 
-As atividades utilizam a base disponibilizada durante o curso.
+As atividades utilizam uma base disponibilizada no curso, com dados de clientes, veículos, lojas e etapas do processo de compra.
 
-Nas consultas, são utilizados schemas como:
+A estrutura está organizada em dois schemas: `sales` e `temp_tables`. Os schemas agrupam as tabelas dentro do banco de dados.
 
-- `sales`: tabelas relacionadas a clientes, produtos, lojas, visitas e vendas;
-- `temp_tables`: tabelas auxiliares utilizadas nos exemplos e exercícios.
+### Diagrama da estrutura
 
-Os arquivos deste repositório registram as consultas e anotações dos estudos. A base de dados e sua instalação não estão incluídas.
+![Schemas e tabelas utilizadas no curso](imagens/schema-banco-de-dados.png)
 
-Para executar os exemplos, é necessário ter acesso à base utilizada no curso ou a uma estrutura compatível com as tabelas e colunas referenciadas.
+O diagrama apresenta as tabelas e as relações utilizadas nos exemplos e exercícios. A tabela auxiliar `temp_tables.duplicados` também faz parte do script do curso, mas não está representada na imagem.
+
+### Schema `sales`
+
+Reúne as tabelas relacionadas às visitas e às vendas de veículos.
+
+| Tabela | Descrição | Chave primária |
+|---|---|---|
+| `customers` | Dados dos clientes, como nome, localização, nascimento, renda e status profissional | `customer_id` |
+| `products` | Dados dos veículos, como marca, modelo, ano e preço | `product_id` |
+| `stores` | Identificação das lojas, com nome e CNPJ | `store_id` |
+| `funnel` | Registros de visitas e etapas da compra, incluindo carrinho, checkout, pagamento e desconto | `visit_id` |
+
+### Schema `temp_tables`
+
+Reúne tabelas auxiliares utilizadas nas atividades.
+
+| Tabela | Finalidade |
+|---|---|
+| `ibge_genders` | Associação entre primeiro nome e gênero utilizada nos exercícios |
+| `regions` | Informações de municípios, estados, regiões, porte e população |
+| `products_2` | Dados adicionais de veículos utilizados nos exemplos de `UNION` e `UNION ALL` |
+| `tabela_1` | Dados de CPF e nome utilizados nos exemplos de joins |
+| `tabela_2` | Dados de CPF e estado utilizados nos exemplos de joins |
+| `duplicados` | Registros utilizados nos estudos de duplicidade |
+
+Apesar do nome `temp_tables`, suas tabelas são criadas como tabelas comuns, e não como tabelas temporárias do PostgreSQL.
+
+### Relacionamentos utilizados
+
+| Tabelas | Colunas utilizadas na junção |
+|---|---|
+| `sales.funnel` e `sales.customers` | `customer_id` |
+| `sales.funnel` e `sales.products` | `product_id` |
+| `sales.funnel` e `sales.stores` | `store_id` |
+| `sales.customers` e `temp_tables.ibge_genders` | `first_name` |
+| `sales.customers` e `temp_tables.regions` | `city` e `state` |
+| `temp_tables.tabela_1` e `temp_tables.tabela_2` | `cpf` |
+
+Essas associações são realizadas nas consultas por meio de joins. O script disponibilizado define chaves primárias, mas não declara restrições de chave estrangeira (`FOREIGN KEY`).
+
+### Acesso à base
+
+A base e o script de criação e preenchimento das tabelas são disponibilizados nos materiais do curso e não estão incluídos neste repositório.
+
+O script cria os schemas e as tabelas dentro de um banco já existente. O nome desse banco pode ser definido no ambiente local de estudos.
 
 ## Como utilizar
 
-1. Abra a pasta do módulo que deseja consultar;
-2. Acesse o arquivo de anotações ou exercícios;
-3. Leia os comentários que acompanham as consultas;
-4. Para praticar, abra o arquivo no pgAdmin conectado à base correspondente;
-5. Selecione e execute uma consulta por vez.
+1. Tenha o PostgreSQL instalado e um banco criado para os estudos;
+2. Conecte-se a esse banco pelo pgAdmin;
+3. Execute o script disponibilizado no curso para criar e preencher as tabelas;
+4. Abra a pasta do módulo que deseja consultar;
+5. Leia os comentários do arquivo de anotações ou exercícios;
+6. Selecione e execute uma consulta por vez.
 
-Os arquivos foram organizados para estudo por trechos, sem ponto e vírgula entre as consultas.
+Os arquivos de estudo estão organizados por trechos, sem ponto e vírgula entre as consultas.
 
 Nos exemplos de manipulação de tabelas, observe a ordem das operações, pois alguns comandos dependem de estruturas criadas anteriormente.
+
+**Atenção:** o script de preparação da base contém comandos `DROP TABLE`. Executá-lo novamente remove e recria as tabelas indicadas, substituindo os dados e alterações anteriores.
 
 ## Projetos práticos
 
