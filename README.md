@@ -85,6 +85,7 @@ O objetivo é registrar minha evolução nos estudos e praticar a aplicação de
 - Tratamento de datas;
 - Tratamento de valores nulos;
 - Criação de condições com `CASE WHEN`;
+- Criação e utilização da função personalizada `datediff`;
 - Exemplos práticos.
 
 ### Módulo 8 — Manipulação de Tabelas
@@ -119,7 +120,8 @@ Dentro das pastas dos módulos, os arquivos seguem o padrão:
 
 - **SQL:** linguagem utilizada nas consultas e na manipulação dos dados;
 - **PostgreSQL:** sistema de gerenciamento do banco de dados;
-- **pgAdmin:** ferramenta utilizada para acessar o banco e executar as consultas.
+- **pgAdmin:** ferramenta utilizada para acessar o banco e executar as consultas;
+- **Microsoft Excel:** organização dos resultados e construção dos dashboards dos projetos práticos.
 
 ## Banco de dados
 
@@ -178,6 +180,14 @@ A base e o script de criação e preenchimento das tabelas são disponibilizados
 
 O script cria os schemas e as tabelas dentro de um banco já existente. O nome desse banco pode ser definido no ambiente local de estudos.
 
+### Função personalizada `datediff`
+
+Durante as aulas, foi criada uma função personalizada chamada `datediff`, utilizada em cálculos de diferença entre datas.
+
+Essa função não é nativa do PostgreSQL. Para executar as consultas que dependem dela, é necessário criar a função no banco, utilizando a definição registrada nas anotações do curso.
+
+Ela também é utilizada na análise de faixa etária do segundo projeto.
+
 ## Como utilizar
 
 1. Tenha o PostgreSQL instalado e um banco criado para os estudos;
@@ -185,9 +195,10 @@ O script cria os schemas e as tabelas dentro de um banco já existente. O nome d
 3. Execute o script disponibilizado no curso para criar e preencher as tabelas;
 4. Abra a pasta do módulo que deseja consultar;
 5. Leia os comentários do arquivo de anotações ou exercícios;
-6. Selecione e execute uma consulta por vez.
+6. Selecione e execute uma consulta por vez;
+7. Para os exemplos que utilizam `datediff`, execute previamente a definição dessa função.
 
-Os arquivos de estudo estão organizados por trechos, sem ponto e vírgula entre as consultas.
+Os arquivos de estudo estão organizados por trechos, sem ponto e vírgula entre as consultas. Definições de funções devem ser executadas como blocos completos, preservando sua sintaxe.
 
 Nos exemplos de manipulação de tabelas, observe a ordem das operações, pois alguns comandos dependem de estruturas criadas anteriormente.
 
@@ -195,11 +206,9 @@ Nos exemplos de manipulação de tabelas, observe a ordem das operações, pois 
 
 ## Projetos práticos
 
-Os projetos do curso possuem repositórios próprios, com as consultas, os resultados e a documentação de cada análise.
+Os dois projetos foram concluídos e possuem repositórios próprios, com consultas SQL, planilhas, dashboards e documentação.
 
 ### Projeto 1 — Dashboard de Acompanhamento de Vendas
-
-**Concluído.**
 
 Projeto desenvolvido com PostgreSQL e Microsoft Excel para acompanhar:
 
@@ -212,11 +221,18 @@ Projeto desenvolvido com PostgreSQL e Microsoft Excel para acompanhar:
 
 [Acessar o repositório do projeto](https://github.com/mclarafl/dashboard-acompanhamento-vendas)
 
-### Projeto 2 — Análise de Perfil dos Clientes
+### Projeto 2 — Dashboard de Perfil dos Leads
 
-**Ainda não iniciado.**
+Projeto desenvolvido com PostgreSQL e Microsoft Excel para analisar:
 
-O link será adicionado após a publicação do projeto.
+- Gênero estimado a partir do primeiro nome;
+- Status profissional;
+- Faixa etária;
+- Faixa de renda;
+- Classificação e idade dos veículos visitados;
+- Visitas por marca e modelo.
+
+[Acessar o repositório do projeto](https://github.com/mclarafl/dashboard-perfil-dos-leads)
 
 ## Progresso
 
@@ -229,7 +245,7 @@ O link será adicionado após a publicação do projeto.
 - [x] Módulo 7 — Tratamento de Dados
 - [x] Módulo 8 — Manipulação de Tabelas
 - [x] Projeto 1 — Dashboard de Acompanhamento de Vendas
-- [ ] Projeto 2 — Análise de Perfil dos Clientes
+- [x] Projeto 2 — Dashboard de Perfil dos Leads
 
 ## Autora
 
